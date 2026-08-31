@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light" />
+  <title>DocuMind — Upwork portfolio &amp; project catalog brief</title>
+  <meta name="description" content="DocuMind: FastAPI RAG with Chroma cosine index, Ollama inference, mode-specific retrieval, OpenAPI v1, live/ready probes. Next.js UI. Reference implementation for technical hiring and fixed-scope contracts." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet" />
+  <style>
+    /* Screen */
+    :root {
+      --text: #111827;
+      --muted: #4b5563;
+      --head: #1e3a8a;
+      --border: #9ca3af;
+      --table-head: #e5e7eb;
+    }
+    * { box-sizing: border-box; }
+    html { font-size: 16px; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+      color: var(--text);
+      background: #f3f4f6;
+      line-height: 1.65;
+    }
+    main {
+      max-width: 40rem;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+      background: #fff;
+      min-height: 100vh;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 0 0 0.35rem;
+      color: var(--head);
+      line-height: 1.2;
+    }
+    .lede {
+      font-size: 1.1rem;
+      color: var(--muted);
+      margin: 0 0 1.5rem;
+      line-height: 1.5;
+    }
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 2rem 0 0.65rem;
+      padding-bottom: 0.25rem;
+      border-bottom: 2px solid var(--border);
+      color: #111827;
+      break-after: avoid;
+    }
+    p, li {
+      font-size: 1.05rem;
+      margin: 0.65rem 0;
+    }
+    ul, ol { padding-left: 1.35rem; }
+    li { margin: 0.45rem 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.98rem;
+      border: 1px solid var(--border);
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: var(--table-head);
+      font-weight: 600;
+    }
+    .callout {
+      border: 1px solid var(--border);
+      background: #f9fafb;
+      padding: 14px 16px;
+      margin: 1.25rem 0;
+      font-size: 1rem;
+      line-height: 1.55;
+    }
+    code, kbd {
+      font-family: ui-monospace, Consolas, monospace;
+      font-size: 0.9em;
+      background: #e5e7eb;
+      padding: 0.12em 0.35em;
+      border-radius: 3px;
+    }
+    kbd { font-size: 0.85em; }
+
+    /* Print: high contrast, big type, no clipped backgrounds */
+    @page {
+      size: letter;
+      margin: 0.75in;
+    }
+    @media print {
+      html { font-size: 12pt; }
+      body {
+        background: #fff !important;
+        color: #000 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      main {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+        min-height: 0;
+        box-shadow: none;
+      }
+      h1 { color: #000 !important; }
+      h2 {
+        color: #000 !important;
+        border-bottom-color: #666 !important;
+        page-break-after: avoid;
+      }
+      p, li, .lede { color: #000 !important; }
+      .lede { font-size: 11pt; }
+      p, li { font-size: 11pt; }
+      table { font-size: 10pt; page-break-inside: avoid; }
+      th { background: #eee !important; }
+      .callout {
+        background: #fff !important;
+        border-color: #999 !important;
+        page-break-inside: avoid;
+      }
+      code, kbd {
+        background: #f0f0f0 !important;
+        color: #000 !important;
+      }
+      a { color: #000; text-decoration: underline; }
+      .figure-dashboard { page-break-inside: avoid; }
+      .figure-dashboard figcaption { color: #000 !important; }
+    }
+    .figure-dashboard {
+      margin: 1.5rem 0;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #f9fafb;
+    }
+    .figure-dashboard img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .figure-dashboard figcaption {
+      padding: 12px 14px;
+      font-size: 0.92rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      line-height: 1.45;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>DocuMind</h1>
+    <p class="lede">Single-page brief for recruiters and marketplace attachments. Export <strong>PDF</strong> from Chrome or Edge (<kbd>Ctrl</kbd>+<kbd>P</kbd> &rarr; Save as PDF). Paste sections into proposals as needed. Fill bracketed placeholders before sending.</p>
+
+    <div class="callout">
+      <strong>Before you publish:</strong> (1) Re-run the screenshot pipeline if the UI changed, (2) paste your Upwork profile URL below, (3) replace the pricing placeholders with your numbers, (4) add a staging URL or say you demo over screen share.
+    </div>
+
+    <div class="callout">
+      <strong>Best PDF (recommended):</strong> Open this file in <strong>Chrome</strong> or <strong>Edge</strong>, then
+      <kbd>Ctrl</kbd>+<kbd>P</kbd> &rarr; Destination: <strong>Save as PDF</strong> &rarr; Margins: <strong>Default</strong>
+      &rarr; Background graphics: <strong>Off</strong> (cleaner). The script-generated PDF is a fallback; browser print usually looks better.
+    </div>
+
+    <figure class="figure-dashboard">
+      <a href="screenshots/documind-dashboard.png" title="Open full dashboard capture (Playwright; default 1680×3200)">
+        <img src="screenshots/documind-upwork-catalog-1000x750.png" width="1000" height="750" alt="DocuMind — portfolio tile: poster left, live dashboard right (1000×750)" loading="lazy" decoding="async" />
+      </a>
+      <figcaption><strong>Figure 1.</strong> Project catalog tile <strong>1000×750</strong> (vector layout: stack line, four capability cards, runtime pills). Regenerate: <code>python scripts/catalog_thumb_art.py --out portfolio/screenshots/documind-upwork-catalog-1000x750.png</code>. Full dashboard capture for interviews: <code>screenshots/documind-dashboard.png</code> (Playwright; default 1680×3200 viewport).</figcaption>
+    </figure>
+
+    <h2>One-line pitch</h2>
+    <p>FastAPI service: ingest PDF/DOCX/TXT (optional arXiv pull), LangChain-style chunking into Chroma with cosine distance, query modes that change retrieval budget and prompts, keyword-weighted rerank, optional FLARE-inspired follow-up retrieval, citations with chunk metadata. Ollama for embed + chat; Next.js dashboard; pytest on routers; <code>/health/live</code> vs <code>/health/ready</code>.</p>
+
+    <h2>What you ship in this shape</h2>
+    <ul>
+      <li>Grounded answers with source cards (title, section, chunk, distance).</li>
+      <li>Modes: general Q&amp;A, compare, methodology, dataset map, reproducibility checklist.</li>
+      <li>Ops: <code>/health/live</code>, <code>/health/ready</code>, <code>X-Request-ID</code>, optional <code>API_KEY</code> on <code>/api/v1</code>, CORS allowlist, gzip, security headers, optional JSON logs.</li>
+      <li>Solid API behavior: 404 on empty delete, arXiv errors mapped to sensible status codes, validated section filters.</li>
+      <li>Next.js UI: status line, paper/chunk counts, preset long prompts, query form, synthesis + expandable sources.</li>
+    </ul>
+
+    <h2>Compared with typical &ldquo;RAG demo&rdquo; repos</h2>
+    <p>Many public examples stop at a single chain, one UI page, and a hosted model. Common stack: LangChain/LlamaIndex + managed vectors + OpenAI. DocuMind keeps an explicit <strong>HTTP contract</strong>, <strong>local inference</strong> as the default path, <strong>readiness vs liveness</strong> health split, pytest coverage on routers, and Docker notes in the README.</p>
+    <table>
+      <thead>
+        <tr><th>Crowded pattern</th><th>Typical portfolio signal</th><th>DocuMind signal</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Chat-with-PDF repos (many GitHub &ldquo;RAG-PDF&rdquo; / ChatPDF variants)</td>
+          <td>Single chain, one UI page, cloud keys assumed.</td>
+          <td>REST contract, optional <strong>local Ollama</strong> path for zero recurring inference cost in demos, bulk paths (directory ingest, arXiv list).</td>
+        </tr>
+        <tr>
+          <td>Notebook or Colab-only deliverable</td>
+          <td>Works on author machine; unclear production boundary.</td>
+          <td>FastAPI lifespan wiring, pytest, Docker story in README; dashboard screenshot under <code>portfolio/screenshots/</code> for attachments.</td>
+        </tr>
+        <tr>
+          <td>Generic &ldquo;citations enabled&rdquo;</td>
+          <td>Sources sometimes irrelevant or from one doc only.</td>
+          <td>Cross-paper diversity + rerank language; multiple <strong>task-shaped</strong> prompts (compare, methodology, datasets, reproduce).</td>
+        </tr>
+        <tr>
+          <td>Health check = <code>200 OK</code> on root</td>
+          <td>Orchestrator cannot tell if embeddings are actually usable.</td>
+          <td><code>/health/live</code> vs <code>/health/ready</code> split; aligns with how you answer infra interview questions, not only demo questions.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="callout">
+      <strong>Proposals:</strong> Tie scope to something measurable (e.g. <code>/health/ready</code> on their VM, or a fixed ingest count), then attach one screenshot and one milestone table from <code>Upwork_Project_Catalog_Client.html</code>.
+    </div>
+
+    <h2>Tech keywords</h2>
+    <p>Python, FastAPI, Pydantic v2, Uvicorn, ChromaDB, LangChain, Ollama, httpx, Next.js 15, React, TypeScript, Docker, pytest.</p>
+
+    <h2>Sample project titles</h2>
+    <ul>
+      <li>Fixed price: MVP RAG over your PDFs (FastAPI + vector DB + grounded UI).</li>
+      <li>Hourly: RAG architecture, evaluation, deployment on your stack.</li>
+      <li>Migration: swap local Ollama for OpenAI or Azure OpenAI behind the same retrieval layer.</li>
+    </ul>
+
+    <h2>Pricing anchors (edit for your profile)</h2>
+    <table>
+      <thead>
+        <tr><th>Offering</th><th>Scope</th><th>USD anchor</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Hourly</td><td>Integration, reviews, debugging</td><td>[ $95 - $150 / hr ]</td></tr>
+        <tr><td>Fixed - Discovery</td><td>Architecture note, backlog, risks; 1-2 weeks</td><td>[ $2,500 - $6,000 ]</td></tr>
+        <tr><td>Fixed - MVP RAG</td><td>Ingest, index, UI, one-cloud deploy, smoke tests</td><td>[ $6,000 - $14,000 ]</td></tr>
+        <tr><td>Fixed - Hardening</td><td>Auth, rate limits, tenant isolation, formal eval</td><td>[ TBD after scope ]</td></tr>
+      </tbody>
+    </table>
+    <p class="lede" style="margin-top: 0.75rem;">Anchors vary by market and your reviews. Use milestones with written acceptance criteria.</p>
+
+    <h2>Five-minute demo</h2>
+    <ol>
+      <li>Boot API + UI (README: <code>start_documind.ps1</code> on Windows or Docker Compose; first full corpus ingest can take a long time &mdash; use <code>-MaxApiWaitMinutes</code> on Windows).</li>
+      <li>Open the dashboard at <code>http://127.0.0.1:3002</code>; load <strong>Baseline: evidence-first summary</strong> (or another operator card), then <strong>Run query</strong>; expand <strong>Sources</strong>.</li>
+      <li>Open <code>/docs</code> and contrast <code>/health/live</code> vs <code>/health/ready</code>.</li>
+      <li>Mention optional <code>API_KEY</code>, CORS allowlist, and gzip for staging handoff.</li>
+    </ol>
+
+    <h2>Companion artifact</h2>
+    <p>Fixed-price milestone template (same folder): <code>Upwork_Project_Catalog_Client.html</code> &mdash; adapt milestones and price to each client.</p>
+
+    <h2>Your links</h2>
+    <ul>
+      <li>Repository: <a href="https://github.com/cdtalley/DocuMind">https://github.com/cdtalley/DocuMind</a></li>
+      <li>Live demo: <strong>Screen share on request</strong> (local stack), or add your public staging URL here when you have one.</li>
+      <li>Upwork profile: [ replace with your profile URL ]</li>
+    </ul>
+  </main>
+</body>
+</html>
